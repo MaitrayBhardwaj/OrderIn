@@ -13,3 +13,8 @@ body{
 .header{
     font-family: Cookie, cursive;
 }
+
+.submitModal{
+	transform: translate(-50%, -50%) !important;
+	position: fixed;
+}

@@ -1,7 +1,11 @@
+import { useContext } from 'react'
 import { RiShoppingCart2Line } from 'react-icons/ri'
+
+import { DishesContext } from '../context/DishesContext'
 
 function Dish (props) {
     const { dish } = props
+    const { setCategory } = useContext(DishesContext)
 
     return (
         <div className="flex m-2 lg:w-2/5 md:w-1/3 grow bg-white flex-col border-slate-300 border-solid border rounded-md">
@@ -9,7 +13,11 @@ function Dish (props) {
             <div className="p-3 border-t">
                 <h5 className="font-semibold my-1 text-lg">{dish.name}</h5>
                 <p className="my-3 mb-5">{dish.desc}</p>
-                <div className="bg-blue-100 text-blue-600 rounded-2xl inline font-sm px-4 py-1">{dish.category}</div>
+                <button 
+                    onClick={() => setCategory(dish.category)}
+                    className="bg-blue-100 text-blue-600 rounded-2xl hover:bg-blue-200 inline font-sm px-4 py-1">
+                        {dish.category}
+                </button>
                 <p className="my-3 text-slate-500">&#8377; {dish.price}</p>
                 <button
                     onClick={props.addDish} 
