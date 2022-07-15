@@ -1,9 +1,9 @@
 function Header () {
-    return (
-        <div className="header text-center text-white text-5xl pt-5">
-            OrderIn
-        </div>
-    );
+	return (
+		<div className="flex justify-center pt-5 px-5">
+			<div className="header text-white text-5xl">OrderIn</div>
+		</div>
+	);
 }
 
 export default Header;
